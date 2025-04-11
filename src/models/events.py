@@ -1,6 +1,7 @@
 from pydantic import BaseModel, ConfigDict
+from beanie import Document
 
-class Event(BaseModel):
+class Event(Document):
     id: int
     title: str
     image: str
@@ -17,7 +18,8 @@ class Event(BaseModel):
                 "image": "path/to",
                 "description": "아 진짜 하기 싫다...",
                 "tags": ["#귀차니즘", "강의"],
-                "location": "제1실습관 207호"
+                "location": "제1실습관 207호",
+                "created_at": "2030"
             }
         }
     )
